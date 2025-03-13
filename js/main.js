@@ -8,11 +8,6 @@
     "use strict";
     
     // Set light theme permanently
-
-    
-
-    
-    
     // Navbar Scroll Effect
     $(window).on('scroll', function() {
         if ($(window).scrollTop() > 50) {

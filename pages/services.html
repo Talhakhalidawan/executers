@@ -18,25 +18,34 @@
     <link rel="canonical" href="https://executers.ae/pages/services.html">
     
     <!-- Favicon -->
-    <link rel="icon" href="static/icon.png" type="image/x-icon">
+    <link rel="icon" href="../static/icon.png" type="image/x-icon">
 
     <script>
-            // Preloader
-    $(document).ready(function() {
-        $('body').css('overflow', 'hidden'); // Disable scrolling when the page loads
-    });
-    
-    $(window).on('load', function() {
-        $('.preloader').addClass('fade-out');
-    
-        setTimeout(function() {
-            $('.preloader-parent').remove(); // Remove preloader from DOM
-            $('body').css('overflow', 'auto'); // Enable scrolling after preloader is gone
-        }, 500);
-    });
-    
-    // Add preloader to DOM
-    $('body').prepend('<div class="preloader-parent"><div class="preloader"><div class="spinner"></div></div></div>');
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.style.overflow = "hidden"; // Disable scrolling when the page loads
+        
+            // Create preloader and add it to the DOM
+            let preloaderParent = document.createElement("div");
+            preloaderParent.className = "preloader-parent";
+            preloaderParent.innerHTML = '<div class="preloader"><div class="spinner"></div></div>';
+            document.body.prepend(preloaderParent);
+        });
+        
+        window.addEventListener("load", function () {
+            let preloader = document.querySelector(".preloader");
+            if (preloader) {
+                preloader.classList.add("fade-out");
+            }
+        
+            setTimeout(function () {
+                let preloaderParent = document.querySelector(".preloader-parent");
+                if (preloaderParent) {
+                    preloaderParent.remove(); // Remove preloader from DOM
+                }
+                document.body.style.overflow = "auto"; // Enable scrolling after preloader is gone
+            }, 500);
+        });
+        
     </script>
     <link rel="stylesheet" href="../css/style.css">
     
@@ -121,7 +130,7 @@
                     <a href="contact.html" class="btn btn-primary rounded-pill">Get Expert Advice</a>
                 </div>
                 <div class="col-lg-6 d-flex justify-content-center" data-aos="fade-left">
-                    <img src="/static/1.png" alt="Dubai Business District" class="img-fluid rounded-4 shadow">
+                    <img src="../static/1.png" alt="Dubai Business District" class="img-fluid rounded-4 shadow">
                 </div>
             </div>
         </div>
@@ -156,7 +165,7 @@
                     <a href="contact.html" class="btn btn-primary rounded-pill">Learn More</a>
                 </div>
                 <div class="col-lg-6 order-lg-1 d-flex justify-content-center" data-aos="fade-right">
-                    <img src="/static/2.jpg" alt="Mainland Business Setup" class="img-fluid rounded-4 shadow">
+                    <img src="../static/2.jpg" alt="Mainland Business Setup" class="img-fluid rounded-4 shadow">
                 </div>
             </div>
         </div>
@@ -191,7 +200,7 @@
                     <a href="contact.html" class="btn btn-primary rounded-pill">Learn More</a>
                 </div>
                 <div class="col-lg-6 d-flex justify-content-center" data-aos="fade-left">
-                    <img src="/static/3.png" alt="Free Zone Business Setup" class="img-fluid rounded-4 shadow">
+                    <img src="../static/3.png" alt="Free Zone Business Setup" class="img-fluid rounded-4 shadow">
                 </div>
             </div>
         </div>
@@ -226,7 +235,7 @@
                     <a href="contact.html" class="btn btn-primary rounded-pill">Learn More</a>
                 </div>
                 <div class="col-lg-6 order-lg-1 d-flex justify-content-center" data-aos="fade-right">
-                    <img src="/static/4.jpg" alt="Offshore Business Setup" class="img-fluid rounded-4 shadow">
+                    <img src="../static/4.jpg" alt="Offshore Business Setup" class="img-fluid rounded-4 shadow">
                 </div>
             </div>
         </div>
@@ -261,7 +270,7 @@
                     <a href="contact.html" class="btn btn-primary rounded-pill">Learn More</a>
                 </div>
                 <div class="col-lg-6 d-flex justify-content-center" data-aos="fade-left">
-                    <img src="/static/5.jpeg" alt="Visa Services" class="img-fluid rounded-4 shadow">
+                    <img src="../static/5.jpeg" alt="Visa Services" class="img-fluid rounded-4 shadow">
                 </div>
             </div>
         </div>
@@ -296,7 +305,7 @@
                     <a href="contact.html" class="btn btn-primary rounded-pill">Learn More</a>
                 </div>
                 <div class="col-lg-6 order-lg-1 d-flex justify-content-center" data-aos="fade-right">
-                    <img src="/static/6.jpg" alt="PRO Services" class="img-fluid rounded-4 shadow">
+                    <img src="../static/6.jpg" alt="PRO Services" class="img-fluid rounded-4 shadow">
                 </div>
             </div>
         </div>
